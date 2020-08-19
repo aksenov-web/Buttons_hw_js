@@ -20,7 +20,8 @@ button {
   height: 48px;
   color: black;
 }
-#plus {
+#plus_button {
   position: relative;
-  top: -47px;
+  top: -50px;
+  left: -1px;
 }
