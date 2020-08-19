@@ -12,10 +12,15 @@ body {
   padding: 50px;
   display: grid;
   grid-template-columns: repeat(3, 150px);
+
   }
 
 button {
   width: 148px;
   height: 48px;
   color: black;
+}
+#plus {
+  position: relative;
+  top: -47px;
 }

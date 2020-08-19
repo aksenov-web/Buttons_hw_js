@@ -1,8 +1,8 @@
 let main_field = document.getElementById('main-field');
+let n = 43;
 
 
-
-for (let i = 1; i < 43; i++) {
+for (let i = 1; i < n; i++) {
   let buttons = document.createElement('button');
   main_field.appendChild(buttons);
   buttons.textContent = i;
@@ -12,7 +12,7 @@ for (let i = 1; i < 43; i++) {
   else {
     buttons.style.background = "green";
     buttons.addEventListener('click', function(){
-      let green = i++;
+      let green = ++i;
       buttons.textContent = green;
     })}
 }
