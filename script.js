@@ -12,7 +12,7 @@ for (let i = 1; i < n; i++) {
   else {
     buttons.style.background = "green";
     buttons.addEventListener('click', function(){
-      let green = ++i;
+      let green = Number(buttons.textContent) + 1;
       buttons.textContent = green;
     })}
 }
