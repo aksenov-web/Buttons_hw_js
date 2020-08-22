@@ -13,6 +13,7 @@ screen.value = color.value;
 
 function colorPick() {
   let selectText = color.options[color.selectedIndex].text;
+  colorOne = selectText;
   screen.value = selectText;
   }
 
@@ -32,7 +33,7 @@ function colorLoop(n) {
     let buttonTypeOne = document.getElementsByClassName('eachThird');
     for (buttons of buttonTypeOne) {
       if (n % 2 == 0) {
-        buttons.style.background = "purple";
+        buttons.style.background = colorOne;
       }
       else {
         buttons.style.background = "orange";
