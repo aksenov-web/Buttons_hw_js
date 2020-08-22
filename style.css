@@ -19,6 +19,11 @@ button {
   width: 148px;
   height: 48px;
   color: black;
+  opacity: 1;
+}
+
+button:not(#plus_button):hover {
+  opacity: .2;
 }
 #plus_button {
   position: relative;

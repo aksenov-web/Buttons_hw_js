@@ -10,16 +10,11 @@ let buttons = main_field.getElementsByTagName('button');
 
 screen.value = color.value;
 
-/*colorPick;
+
 function colorPick() {
-  color.addEventListener('click', function(){
-    screen.value = color.value;
-    console.log(color.value);
-  })
-
+  let selectText = color.options[color.selectedIndex].text;
+  screen.value = selectText;
   }
-*/
-
 
 //Button plus
 plus_button.addEventListener('click', function(){
@@ -32,14 +27,12 @@ for (let i = 1; i <= 42; i++) {
   green(i);
 }
 
-
-
 function colorLoop(n) {
   setTimeout(function() {
     let buttonTypeOne = document.getElementsByClassName('eachThird');
     for (buttons of buttonTypeOne) {
       if (n % 2 == 0) {
-      buttons.style.background = "purple";
+        buttons.style.background = "purple";
       }
       else {
         buttons.style.background = "orange";
@@ -57,6 +50,7 @@ function green(i) {
 
   if (buttons.textContent % 2 == 0) {
     buttons.style.background = colorTwo;
+    buttons.style.color = "white";
   }
   if (i % 3 == 0) {
     buttons.style.background = colorOne;
