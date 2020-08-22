@@ -1,21 +1,18 @@
 let main_field = document.getElementById('main-field');
 let i = 42;
 let plus_button = document.getElementById('plus_button');
-let color = document.getElementById('colors');
+let selColor = document.getElementById('colors');
+let selColorTwo = document.getElementById('colors_2');
 let screen = document.getElementById('screen');
+let screenTwo = document.getElementById('screen_2');
 let colorOne = "yellow";
 let colorTwo = "blue";
 let n = 0;
 let buttons = main_field.getElementsByTagName('button');
 
-screen.value = color.value;
 
 
-function colorPick() {
-  let selectText = color.options[color.selectedIndex].text;
-  colorOne = selectText;
-  screen.value = selectText;
-  }
+
 
 //Button plus
 plus_button.addEventListener('click', function(){
@@ -36,13 +33,25 @@ function colorLoop(n) {
         buttons.style.background = colorOne;
       }
       else {
-        buttons.style.background = "orange";
+        buttons.style.background = colorTwo;
       }
     }
     colorLoop(++n);
   }, 1000);
 }
 colorLoop(0);
+
+function colorPick() {
+  let selectText = selColor.options[selColor.selectedIndex].text;
+  colorOne = selectText;
+  screen.value = selectText;
+  }
+f
+function colorPickTwo() {
+  let selectText = selColorTwo.options[selColorTwo.selectedIndex].text;
+  colorTwo = selectText;
+  screenTwo.value = selectText;
+  }
 
 function green(i) {
   let buttons = document.createElement('button');
