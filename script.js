@@ -1,10 +1,23 @@
 let main_field = document.getElementById('main-field');
 let i = 42;
 let plus_button = document.getElementById('plus_button');
-let color = document.getElementsByClassName('colors');
+let color = document.getElementById('colors');
+let screen = document.getElementById('screen');
 let colorOne = "yellow";
 let colorTwo = "blue";
 let n = 0;
+
+screen.value = color.value;
+
+/*colorPick;
+function colorPick() {
+  color.addEventListener('click', function(){
+    screen.value = color.value;
+    console.log(color.value);
+  })
+
+  }
+*/
 
 
 //Button plus
@@ -17,7 +30,7 @@ plus_button.addEventListener('click', function(){
 for (let i = 1; i <= 42; i++) {
   green(i);
 }
-console.log(color);
+console.log(color.value);
 
 
 function green(i) {
@@ -30,6 +43,7 @@ function green(i) {
   }
   if (i % 3 == 0) {
     buttons.style.background = colorOne;
+    buttons.classList.add("eachThird");
     buttons.addEventListener('click', function(){
       let green_button_encrease = Number(buttons.textContent) + 1;
       buttons.textContent = green_button_encrease;
@@ -40,6 +54,9 @@ function green(i) {
         buttons.style.background = colorOne;
       }
     })}
+  else {
+    buttons.classList.add("eachOneTwo");
+  }
   if (buttons.textContent % 2 == 0) {
     buttons.style.background = colorTwo;
   }
