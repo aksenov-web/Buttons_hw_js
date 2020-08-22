@@ -6,6 +6,7 @@ let screen = document.getElementById('screen');
 let colorOne = "yellow";
 let colorTwo = "blue";
 let n = 0;
+let buttons = main_field.getElementsByTagName('button');
 
 screen.value = color.value;
 
@@ -30,8 +31,24 @@ plus_button.addEventListener('click', function(){
 for (let i = 1; i <= 42; i++) {
   green(i);
 }
-console.log(color.value);
 
+
+
+function colorLoop(n) {
+  setTimeout(function() {
+    let buttonTypeOne = document.getElementsByClassName('eachThird');
+    for (buttons of buttonTypeOne) {
+      if (n % 2 == 0) {
+      buttons.style.background = "purple";
+      }
+      else {
+        buttons.style.background = "orange";
+      }
+    }
+    colorLoop(++n);
+  }, 1000);
+}
+colorLoop(0);
 
 function green(i) {
   let buttons = document.createElement('button');
