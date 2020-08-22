@@ -1,16 +1,54 @@
 let main_field = document.getElementById('main-field');
 let i = 42;
 let plus_button = document.getElementById('plus_button');
+let buttons = document.createElement('button');
 plus_button.addEventListener('click', function(){
   i = i + 1;
-  green();
-
+  let buttons = document.createElement('button');
+  main_field.appendChild(buttons);
+  buttons.textContent = i;
+  if (i % 3 == 0) {
+    buttons.style.background = "green";
+    buttons.addEventListener('click', function(){
+      let green_button_encrease = Number(buttons.textContent) + 1;
+      buttons.textContent = green_button_encrease;
+      if (buttons.textContent % 2 == 0) {
+    buttons.style.background = "red";
+  }
+      else {
+        buttons.style.background = "green";
+      }
+    })}
+  if (buttons.textContent % 2 == 0) {
+    buttons.style.background = "red";
+  }
 })
 
 for (let i = 1; i <= 42; i++) {
-  green();
+  let buttons = document.createElement('button');
+  main_field.appendChild(buttons);
+  buttons.textContent = i;
+  if (buttons.textContent % 2 == 0) {
+    buttons.style.background = "red";
+  }
+  if (i % 3 == 0) {
+    buttons.style.background = "green";
+    buttons.addEventListener('click', function(){
+      let green_button_encrease = Number(buttons.textContent) + 1;
+      buttons.textContent = green_button_encrease;
+      if (buttons.textContent % 2 == 0) {
+    buttons.style.background = "red";
+  }
+      else {
+        buttons.style.background = "green";
+      }
+    })}
+  if (buttons.textContent % 2 == 0) {
+    buttons.style.background = "red";
+  }
 }
-function green() {
+
+/*function green(i) {
   let buttons = document.createElement('button');
   main_field.appendChild(buttons);
   buttons.textContent = i;
@@ -24,7 +62,7 @@ function green() {
       buttons.textContent = green_button_encrease;
     })}
 }
-
+*/
 /*function func1 (button) {
   for (let i = 0; i < 42; i) {
     i +=3;
