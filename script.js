@@ -6,17 +6,17 @@ let selColorTwo = document.getElementById('colors_2');
 let screen = document.getElementById('screen');
 let screenTwo = document.getElementById('screen_2');
 let colorOne = "yellow";
-let colorTwo = "blue";
+let colorTwo = "purple";
 let n = 0;
+let r = 1000;
 let buttons = main_field.getElementsByTagName('button');
-
-
-
-
+let rate_up = document.getElementById('rate_up');
+let rate_down = document.getElementById('rate_down');
 
 //Button plus
 plus_button.addEventListener('click', function(){
   i = i + 1;
+  main_field.style.background = "darkgray";
   green(i);
 })
 
@@ -31,22 +31,25 @@ function colorLoop(n) {
     for (buttons of buttonTypeOne) {
       if (n % 2 == 0) {
         buttons.style.background = colorOne;
+        //buttons.style.width = '145px';
       }
       else {
         buttons.style.background = colorTwo;
+        //buttons.style.width = '250px';
       }
     }
     colorLoop(++n);
-  }, 1000);
+  }, r);
 }
 colorLoop(0);
+
 
 function colorPick() {
   let selectText = selColor.options[selColor.selectedIndex].text;
   colorOne = selectText;
   screen.value = selectText;
   }
-f
+
 function colorPickTwo() {
   let selectText = selColorTwo.options[selColorTwo.selectedIndex].text;
   colorTwo = selectText;
@@ -60,7 +63,7 @@ function green(i) {
 
   if (buttons.textContent % 2 == 0) {
     buttons.style.background = colorTwo;
-    buttons.style.color = "white";
+    buttons.style.color = "red";
   }
   if (i % 3 == 0) {
     buttons.style.background = colorOne;
@@ -82,6 +85,14 @@ function green(i) {
     buttons.style.background = colorTwo;
   }
 }
+ rate_up.addEventListener('click', function(){
+   r = r - 200;
+   console.log(r);
+ })
+rate_down.addEventListener('click', function(){
+   r = r + 200;
+  console.log(r);
+ })
 
 /*function func1 (button) {
   for (let i = 0; i < 42; i) {
