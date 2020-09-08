@@ -5,37 +5,53 @@ let selColor = document.getElementById('colors');
 let selColorTwo = document.getElementById('colors_2');
 let screen = document.getElementById('screen');
 let screenTwo = document.getElementById('screen_2');
-let colorOne = "yellow";
-let colorTwo = "purple";
+let colorOne = "Blue";
+let colorTwo = "Green";
 let n = 0;
 let r = 1000;
 let buttons = main_field.getElementsByTagName('button');
 let rate_up = document.getElementById('rate_up');
 let rate_down = document.getElementById('rate_down');
+let state = true;
 
 //Button plus
 plus_button.addEventListener('click', function(){
-  i = i + 1;
-  main_field.style.background = "darkgray";
-  green(i);
+  try {
+    if (state == false) {
+      throw 'Out of out';
+        }
+    createButton(++i);
+  }
+  catch(e) {
+    //alert("!");
+    console.log(e);
+  }
 })
 
 // 42 buttons
 for (let i = 1; i <= 42; i++) {
-  green(i);
+  createButton(i);
 }
 
 function colorLoop(n) {
   setTimeout(function() {
+    //colorPick;
+    //colorPickTwo;
     let buttonTypeOne = document.getElementsByClassName('eachThird');
     for (buttons of buttonTypeOne) {
       if (n % 2 == 0) {
-        buttons.style.background = colorOne;
+        buttons.classList.remove("btn-dark", "btn-info");
+        buttons.classList.add("btn-danger");
         //buttons.style.width = '145px';
+        //console.log(colorOne);
+        state = false;
       }
       else {
-        buttons.style.background = colorTwo;
+        buttons.classList.remove("btn-danger", "btn-info");
+        buttons.classList.add("btn-dark");
         //buttons.style.width = '250px';
+        //console.log(colorTwo);
+        state = true;
       }
     }
     colorLoop(++n);
@@ -44,7 +60,7 @@ function colorLoop(n) {
 colorLoop(0);
 
 
-function colorPick() {
+/*function colorPick() {
   let selectText = selColor.options[selColor.selectedIndex].text;
   colorOne = selectText;
   screen.value = selectText;
@@ -55,34 +71,34 @@ function colorPickTwo() {
   colorTwo = selectText;
   screenTwo.value = selectText;
   }
-
-function green(i) {
+*/
+function createButton(i) {
   let buttons = document.createElement('button');
+  buttons.classList.add("btn", "btn-secondary")
   main_field.appendChild(buttons);
   buttons.textContent = i;
 
   if (buttons.textContent % 2 == 0) {
-    buttons.style.background = colorTwo;
-    buttons.style.color = "red";
+    //buttons.style.background = colorTwo;
   }
   if (i % 3 == 0) {
-    buttons.style.background = colorOne;
+    //buttons.style.background = colorOne;
     buttons.classList.add("eachThird");
     buttons.addEventListener('click', function(){
       let green_button_encrease = Number(buttons.textContent) + 1;
       buttons.textContent = green_button_encrease;
       if (buttons.textContent % 2 == 0) {
-    buttons.style.background = colorTwo;
+    //buttons.style.background = colorTwo;
       }
       else {
-        buttons.style.background = colorOne;
+        //buttons.style.background = colorOne;
       }
     })}
   else {
     buttons.classList.add("eachOneTwo");
   }
   if (buttons.textContent % 2 == 0) {
-    buttons.style.background = colorTwo;
+   buttons.classList.add("btn-info");
   }
 }
  rate_up.addEventListener('click', function(){

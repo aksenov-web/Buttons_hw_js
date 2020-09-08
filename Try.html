@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tty</title>
+
+
+  </head>
+  <body>
+
+    <script>
+      try {
+        let n = 0;
+
+
+        console.log("N = " + n);
+
+        validateValue(n);
+
+        console.log("N = " + ++n);
+
+      }
+      catch (e) {
+        console.log(e);
+
+      }
+
+      function validateValue(i) {
+        if (i == 0) {
+        throw "Erron code 1";
+        }
+      }
+
+    </script>
+
+  </body>
+</html>
