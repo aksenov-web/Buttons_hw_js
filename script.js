@@ -82,22 +82,11 @@ function createButton(i) {
   buttons.classList.add("btn", "btn-secondary")
   main_field.appendChild(buttons);
   buttons.textContent = i;
-
-  if (buttons.textContent % 2 == 0) {
-    //buttons.style.background = colorTwo;
-  }
   if (i % 3 == 0) {
-    //buttons.style.background = colorOne;
     buttons.classList.add("eachThird");
     buttons.addEventListener('click', function(){
-      let green_button_encrease = Number(buttons.textContent) + 1;
-      buttons.textContent = green_button_encrease;
-      if (buttons.textContent % 2 == 0) {
-    //buttons.style.background = colorTwo;
-      }
-      else {
-        //buttons.style.background = colorOne;
-      }
+      let button_encrease = Number(buttons.textContent) + 1;
+      buttons.textContent = button_encrease;
     })}
   else {
     buttons.classList.add("eachOneTwo");
@@ -106,14 +95,15 @@ function createButton(i) {
    buttons.classList.add("btn-info");
   }
 }
+
  rate_up.addEventListener('click', function(){
    r = r - 200;
    console.log(r);
- })
+ });
 rate_down.addEventListener('click', function(){
    r = r + 200;
   console.log(r);
- })
+ });
 
 /*function func1 (button) {
   for (let i = 0; i < 42; i) {
