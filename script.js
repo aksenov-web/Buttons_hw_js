@@ -33,6 +33,11 @@ for (let i = 1; i <= 42; i++) {
   createButton(i);
 }
 
+selColor.style.display = 'none';
+selColorTwo.style.display = 'none';
+screen.style.display = 'none';
+screenTwo.style.display = 'none';
+
 function colorLoop(n) {
   setTimeout(function() {
     //colorPick;
